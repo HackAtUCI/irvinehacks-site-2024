@@ -280,3 +280,18 @@ def test_non_waitlisted_applicant_cannot_be_released(
     assert res.status_code == 404
 
     mock_mongodb_handler_update_one.assert_not_awaited()
+
+
+@patch("services.mongodb_handler.retrieve", autospec=True)
+def test_can_retrieve_hackers(
+    mock_mongodb_handler_retrieve: AsyncMock,
+) -> None:
+    pass
+
+
+@patch("services.mongodb_handler.update_one", autospec=True)
+@patch("services.mongodb_handler.retrieve_one", autospec=True)
+def test_can_check_in_participants(
+    mock_mongodb_handler_retrieve: AsyncMock,
+) -> None:
+    pass
